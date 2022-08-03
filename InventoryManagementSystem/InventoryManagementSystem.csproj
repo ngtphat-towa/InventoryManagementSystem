@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerModuleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerModuleForm.Designer.cs">
+      <DependentUpon>CustomerModuleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomIconButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -66,18 +78,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserForm.cs">
+    <Compile Include="User\UserForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserForm.Designer.cs">
+    <Compile Include="User\UserForm.Designer.cs">
       <DependentUpon>UserForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserModuleForm.cs">
+    <Compile Include="User\UserModuleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserModuleForm.Designer.cs">
+    <Compile Include="User\UserModuleForm.Designer.cs">
       <DependentUpon>UserModuleForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerModuleForm.resx">
+      <DependentUpon>CustomerModuleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomIconButton.resx">
       <DependentUpon>CustomIconButton.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,10 +115,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UserForm.resx">
+    <EmbeddedResource Include="User\UserForm.resx">
       <DependentUpon>UserForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserModuleForm.resx">
+    <EmbeddedResource Include="User\UserModuleForm.resx">
       <DependentUpon>UserModuleForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
