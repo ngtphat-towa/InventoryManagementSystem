@@ -43,6 +43,8 @@ namespace InventoryManagementSystem
             this.btnSave = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.txtReType = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +102,7 @@ namespace InventoryManagementSystem
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(138, 164);
+            this.txtFullName.Location = new System.Drawing.Point(138, 163);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(415, 28);
             this.txtFullName.TabIndex = 4;
@@ -116,7 +118,7 @@ namespace InventoryManagementSystem
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(138, 220);
+            this.txtPassword.Location = new System.Drawing.Point(138, 218);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(415, 28);
             this.txtPassword.TabIndex = 6;
@@ -132,7 +134,7 @@ namespace InventoryManagementSystem
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(138, 276);
+            this.txtPhone.Location = new System.Drawing.Point(138, 328);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(415, 28);
             this.txtPhone.TabIndex = 8;
@@ -140,7 +142,7 @@ namespace InventoryManagementSystem
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(31, 279);
+            this.label5.Location = new System.Drawing.Point(31, 331);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 21);
             this.label5.TabIndex = 7;
@@ -152,7 +154,7 @@ namespace InventoryManagementSystem
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(247, 338);
+            this.btnSave.Location = new System.Drawing.Point(247, 388);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(100, 38);
             this.btnSave.TabIndex = 9;
@@ -166,12 +168,13 @@ namespace InventoryManagementSystem
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(359, 338);
+            this.btnUpdate.Location = new System.Drawing.Point(359, 388);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(100, 38);
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnClear
             // 
@@ -179,7 +182,7 @@ namespace InventoryManagementSystem
             this.btnClear.FlatAppearance.BorderSize = 0;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(471, 338);
+            this.btnClear.Location = new System.Drawing.Point(471, 388);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(100, 38);
             this.btnClear.TabIndex = 11;
@@ -187,11 +190,29 @@ namespace InventoryManagementSystem
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // txtReType
+            // 
+            this.txtReType.Location = new System.Drawing.Point(138, 273);
+            this.txtReType.Name = "txtReType";
+            this.txtReType.Size = new System.Drawing.Size(415, 28);
+            this.txtReType.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 276);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 21);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Re-Type:";
+            // 
             // UserModuleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(596, 404);
+            this.ClientSize = new System.Drawing.Size(596, 438);
+            this.Controls.Add(this.txtReType);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
@@ -222,16 +243,18 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label lbExit;
+        public System.Windows.Forms.Button btnSave;
+        public System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.TextBox txtUserName;
+        public System.Windows.Forms.TextBox txtFullName;
+        public System.Windows.Forms.TextBox txtPassword;
+        public System.Windows.Forms.TextBox txtPhone;
+        public System.Windows.Forms.TextBox txtReType;
+        private System.Windows.Forms.Label label6;
     }
 }

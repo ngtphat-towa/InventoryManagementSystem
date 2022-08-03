@@ -16,5 +16,24 @@ namespace InventoryManagementSystem
         {
             InitializeComponent();
         }
+        private Form activeForm = null;
+        private void OpenChildForm(Form childForm)
+        {
+            if (activeForm!=null)
+            {
+                activeForm.Close();
+            }
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        private void btnUser_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new UserForm());
+        }
     }
 }
