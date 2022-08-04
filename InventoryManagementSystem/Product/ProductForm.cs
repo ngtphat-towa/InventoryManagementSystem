@@ -65,10 +65,6 @@ namespace InventoryManagementSystem
             }
             dr.Close();
             con.Close();
-            foreach (var item in dgvProduct.Rows)
-            {
-               
-            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
