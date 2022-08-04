@@ -36,23 +36,23 @@ namespace InventoryManagementSystem
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbHeader = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panelMain = new System.Windows.Forms.Panel();
             this.btnOrder = new InventoryManagementSystem.CustomIconButton();
             this.btnUser = new InventoryManagementSystem.CustomIconButton();
             this.btnCustomer = new InventoryManagementSystem.CustomIconButton();
             this.btnCategory = new InventoryManagementSystem.CustomIconButton();
             this.btnProduct = new InventoryManagementSystem.CustomIconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbHeader = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelMain = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProduct)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -127,55 +127,6 @@ namespace InventoryManagementSystem
             this.label2.TabIndex = 17;
             this.label2.Text = "PRODUCTS";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(68, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 34);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "EL Towa";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbHeader
-            // 
-            this.lbHeader.AutoSize = true;
-            this.lbHeader.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbHeader.Location = new System.Drawing.Point(8, 56);
-            this.lbHeader.Name = "lbHeader";
-            this.lbHeader.Size = new System.Drawing.Size(296, 23);
-            this.lbHeader.TabIndex = 9;
-            this.lbHeader.Text = "Inventory Management System";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 627);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(982, 26);
-            this.panel2.TabIndex = 1;
-            // 
-            // panelMain
-            // 
-            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMain.Location = new System.Drawing.Point(0, 89);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(982, 538);
-            this.panelMain.TabIndex = 2;
-            // 
             // btnOrder
             // 
             this.btnOrder.Image = ((System.Drawing.Image)(resources.GetObject("btnOrder.Image")));
@@ -238,6 +189,56 @@ namespace InventoryManagementSystem
             this.btnProduct.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnProduct.TabIndex = 12;
             this.btnProduct.TabStop = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(68, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 34);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "EL Towa";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(12, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbHeader
+            // 
+            this.lbHeader.AutoSize = true;
+            this.lbHeader.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHeader.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lbHeader.Location = new System.Drawing.Point(8, 56);
+            this.lbHeader.Name = "lbHeader";
+            this.lbHeader.Size = new System.Drawing.Size(296, 23);
+            this.lbHeader.TabIndex = 9;
+            this.lbHeader.Text = "Inventory Management System";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 627);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(982, 26);
+            this.panel2.TabIndex = 1;
+            // 
+            // panelMain
+            // 
+            this.panelMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMain.Location = new System.Drawing.Point(0, 89);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(982, 538);
+            this.panelMain.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -254,12 +255,12 @@ namespace InventoryManagementSystem
             this.Text = "MainForm";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnProduct)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

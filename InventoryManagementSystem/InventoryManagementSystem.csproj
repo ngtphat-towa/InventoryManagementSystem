@@ -46,10 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryModuleForm.cs">
+    <Compile Include="Category\CategoryModuleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CategoryModuleForm.Designer.cs">
+    <Compile Include="Category\CategoryModuleForm.Designer.cs">
       <DependentUpon>CategoryModuleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Category\CategoryForm.cs">
@@ -89,6 +89,18 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Product\ProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductForm.Designer.cs">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Product\ProductModuleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Product\ProductModuleForm.Designer.cs">
+      <DependentUpon>ProductModuleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User\UserForm.cs">
@@ -103,7 +115,7 @@
     <Compile Include="User\UserModuleForm.Designer.cs">
       <DependentUpon>UserModuleForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CategoryModuleForm.resx">
+    <EmbeddedResource Include="Category\CategoryModuleForm.resx">
       <DependentUpon>CategoryModuleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Category\CategoryForm.resx">
@@ -123,6 +135,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductForm.resx">
+      <DependentUpon>ProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product\ProductModuleForm.resx">
+      <DependentUpon>ProductModuleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
