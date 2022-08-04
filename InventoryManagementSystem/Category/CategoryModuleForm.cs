@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace InventoryManagementSystem
 {
-    public partial class CustomerModuleForm : Form
+    public partial class CategoryModuleForm : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=elhanaya\elhanaya;Initial Catalog=InventoryDB_Sample;Integrated Security=True;Pooling=False");
         SqlCommand cm = new SqlCommand();
-        public CustomerModuleForm()
+        public CategoryModuleForm()
         {
             InitializeComponent();
         }
@@ -24,17 +24,17 @@ namespace InventoryManagementSystem
         {
             try
             {
-           
-                if (MessageBox.Show("Are you sure you want to save this customer?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+
+                if (MessageBox.Show("Are you sure you want to save this category?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    cm = new SqlCommand("INSERT INTO dbo.tbCustomer(cname,cphone)VALUES(@cname,@cphone)", con);
-                    cm.Parameters.AddWithValue("@cname", txtFullName.Text);
-                    cm.Parameters.AddWithValue("@cphone", txtPhone.Text);
+                    cm = new SqlCommand("INSERT INTO tbCategory(name)VALUES(@name)", con);
+                    cm.Parameters.AddWithValue("@name", txtName.Text);
+
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Customer has been successfully saved.");
+                    MessageBox.Show("Category has been successfully saved.");
                     this.Dispose();
                 }
             }
@@ -46,10 +46,10 @@ namespace InventoryManagementSystem
         }
         private void Clear()
         {
-            txtFullName.Clear();
-            txtPhone.Clear();
+            txtName.Clear();
+            lbCategoryID.Text = "Category ID";
 
-            
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -67,16 +67,16 @@ namespace InventoryManagementSystem
         {
             try
             {
-                if (MessageBox.Show("Are you sure you want to update this Customer?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to update this Category?", "Update Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
-                    cm = new SqlCommand("UPDATE dbo.tbCustomer SET cname = @cname,cphone=@cphone WHERE cid LIKE '" + lbCustomerID.Text + "' ", con);
-                    cm.Parameters.AddWithValue("@cname", txtFullName.Text);
-                    cm.Parameters.AddWithValue("@cphone", txtFullName.Text);
+                    cm = new SqlCommand("UPDATE tbCategory SET name = @name WHERE Id LIKE '" + lbCategoryID.Text + "' ", con);
+                    cm.Parameters.AddWithValue("@name", txtName.Text);
+
                     con.Open();
                     cm.ExecuteNonQuery();
                     con.Close();
-                    MessageBox.Show("Customer has been successfully updated!");
+                    MessageBox.Show("Category has been successfully updated!");
                     this.Dispose();
                 }
 
