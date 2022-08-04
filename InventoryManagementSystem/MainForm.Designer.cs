@@ -212,6 +212,7 @@ namespace InventoryManagementSystem
             this.btnCustomer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCustomer.TabIndex = 14;
             this.btnCustomer.TabStop = false;
+            this.btnCustomer.Click += new System.EventHandler(this.btnCustomer_Click);
             // 
             // btnCategory
             // 
@@ -224,6 +225,7 @@ namespace InventoryManagementSystem
             this.btnCategory.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCategory.TabIndex = 13;
             this.btnCategory.TabStop = false;
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // btnProduct
             // 

@@ -21,7 +21,7 @@ namespace InventoryManagementSystem
             InitializeComponent();
             LoadUser();
         }
-        //TODO https://youtu.be/WoN8-rCY5o8?t=2204
+       
         private void LoadUser()
         {
             int i = 0;

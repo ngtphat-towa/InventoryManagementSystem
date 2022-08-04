@@ -65,6 +65,7 @@ namespace InventoryManagementSystem
             this.lbExit.Size = new System.Drawing.Size(21, 19);
             this.lbExit.TabIndex = 10;
             this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // label1
             // 
@@ -74,9 +75,9 @@ namespace InventoryManagementSystem
             this.label1.Location = new System.Drawing.Point(13, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 23);
+            this.label1.Size = new System.Drawing.Size(184, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "User Module";
+            this.label1.Text = "Customer Module";
             // 
             // btnClear
             // 
@@ -90,6 +91,7 @@ namespace InventoryManagementSystem
             this.btnClear.TabIndex = 25;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnUpdate
             // 
@@ -103,6 +105,7 @@ namespace InventoryManagementSystem
             this.btnUpdate.TabIndex = 24;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnSave
             // 
@@ -116,6 +119,7 @@ namespace InventoryManagementSystem
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // txtPhone
             // 
@@ -154,9 +158,9 @@ namespace InventoryManagementSystem
             this.lbCustomerID.AutoSize = true;
             this.lbCustomerID.Location = new System.Drawing.Point(57, 224);
             this.lbCustomerID.Name = "lbCustomerID";
-            this.lbCustomerID.Size = new System.Drawing.Size(102, 21);
+            this.lbCustomerID.Size = new System.Drawing.Size(113, 21);
             this.lbCustomerID.TabIndex = 26;
-            this.lbCustomerID.Text = "Custmer ID";
+            this.lbCustomerID.Text = "Customer ID";
             this.lbCustomerID.Visible = false;
             // 
             // CustomerModuleForm
@@ -175,7 +179,7 @@ namespace InventoryManagementSystem
             this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerModuleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CustomerModuleForm";
@@ -198,6 +202,6 @@ namespace InventoryManagementSystem
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox txtFullName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lbCustomerID;
+        public System.Windows.Forms.Label lbCustomerID;
     }
 }
