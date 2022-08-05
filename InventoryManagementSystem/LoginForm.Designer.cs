@@ -31,6 +31,7 @@ namespace InventoryManagementSystem
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbExit = new System.Windows.Forms.Label();
             this.lbHeader = new System.Windows.Forms.Label();
             this.pbHeaderIcon = new System.Windows.Forms.PictureBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@ namespace InventoryManagementSystem
             this.lbContext = new System.Windows.Forms.Label();
             this.lbClear = new System.Windows.Forms.Label();
             this.cbShowPass = new System.Windows.Forms.CheckBox();
-            this.lbExit = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbHeaderIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoginIcon)).BeginInit();
@@ -61,6 +61,18 @@ namespace InventoryManagementSystem
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(320, 75);
             this.panel1.TabIndex = 0;
+            // 
+            // lbExit
+            // 
+            this.lbExit.AutoSize = true;
+            this.lbExit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbExit.ForeColor = System.Drawing.Color.White;
+            this.lbExit.Location = new System.Drawing.Point(290, 9);
+            this.lbExit.Name = "lbExit";
+            this.lbExit.Size = new System.Drawing.Size(21, 19);
+            this.lbExit.TabIndex = 9;
+            this.lbExit.Text = "X";
+            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // lbHeader
             // 
@@ -127,6 +139,7 @@ namespace InventoryManagementSystem
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // pbLoginIcon
             // 
@@ -170,18 +183,6 @@ namespace InventoryManagementSystem
             this.cbShowPass.Text = "Show Password";
             this.cbShowPass.UseVisualStyleBackColor = true;
             this.cbShowPass.CheckedChanged += new System.EventHandler(this.cbShowPass_CheckedChanged);
-            // 
-            // lbExit
-            // 
-            this.lbExit.AutoSize = true;
-            this.lbExit.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbExit.ForeColor = System.Drawing.Color.White;
-            this.lbExit.Location = new System.Drawing.Point(290, 9);
-            this.lbExit.Name = "lbExit";
-            this.lbExit.Size = new System.Drawing.Size(21, 19);
-            this.lbExit.TabIndex = 9;
-            this.lbExit.Text = "X";
-            this.lbExit.Click += new System.EventHandler(this.lbExit_Click);
             // 
             // LoginForm
             // 

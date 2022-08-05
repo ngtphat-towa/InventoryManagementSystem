@@ -58,7 +58,8 @@ namespace InventoryManagementSystem
         {
             int i = 0;
             dgvProduct.Rows.Clear();
-            cm = new SqlCommand("SELECT * FROM dbo.tbProduct  WHERE CONCAT(id, name, qty, price, description) LIKE '%" + txtProductSearch.Text + "%'", con);
+            cm = new SqlCommand($"SELECT * FROM dbo.tbProduct  " +
+                                $"WHERE CONCAT(id, name, qty, price, description) LIKE '%" + txtProductSearch.Text + "%'", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
@@ -92,7 +93,7 @@ namespace InventoryManagementSystem
 
         private void txtCustomerSearch_TextChanged(object sender, EventArgs e)
         {
-
+            LoadCustomer();
         }
         private int currentSelectedQty()
         {
@@ -135,6 +136,78 @@ namespace InventoryManagementSystem
                 int total = Convert.ToInt16(txtProductPrice.Text) * Convert.ToInt16(txtQty.Value);
                 txtTotal.Text = total.ToString();
             }
+        }
+
+        private void btnInsert_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtCustomerId.Text == "")
+                {
+                    MessageBox.Show("Please select customer!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (txtProductId.Text == "")
+                {
+                    MessageBox.Show("Please select product!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (MessageBox.Show("Are you sure you want to insert this order?", "Saving Record", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    cm = new SqlCommand($"INSERT INTO tbOrder(odate, pid, cid, qty, price, total)" +
+                        $"VALUES(@odate, @pid, @cid, @qty, @price, @total)", con);
+                    cm.Parameters.AddWithValue("@odate", orderDatePicker.Value);
+                    cm.Parameters.AddWithValue("@pid", Convert.ToInt32(txtProductId.Text));
+                    cm.Parameters.AddWithValue("@cid", Convert.ToInt32(txtCustomerId.Text));
+                    cm.Parameters.AddWithValue("@qty", Convert.ToInt32(txtQty.Value));
+                    cm.Parameters.AddWithValue("@price", Convert.ToInt32(txtProductPrice.Text));
+                    cm.Parameters.AddWithValue("@total", Convert.ToInt32(txtTotal.Text));
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Order has been successfully inserted.");
+
+
+                    cm = new SqlCommand("UPDATE tbProduct SET qty=(qty-@qty) WHERE id LIKE '" + txtProductId.Text + "' ", con);
+                    cm.Parameters.AddWithValue("@qty", Convert.ToInt16(txtQty.Value));
+
+                    con.Open();
+                    cm.ExecuteNonQuery();
+                    con.Close();
+                    Clear();
+                    LoadProduct();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public void Clear()
+        {
+            txtCustomerId.Clear();
+            txtCustomerName.Clear();
+
+            txtProductId.Clear();
+            txtProductName.Clear();
+
+            txtProductPrice.Clear();
+            txtQty.Value = 0;
+            txtTotal.Clear();
+            orderDatePicker.Value = DateTime.Now;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void txtProductSearch_TextChanged(object sender, EventArgs e)
+        {
+            LoadProduct();
         }
     }
 }

@@ -89,16 +89,16 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderForm.cs">
+    <Compile Include="Order\OrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderForm.Designer.cs">
+    <Compile Include="Order\OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrderModuleForm.cs">
+    <Compile Include="Order\OrderModuleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrderModuleForm.Designer.cs">
+    <Compile Include="Order\OrderModuleForm.Designer.cs">
       <DependentUpon>OrderModuleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Product\ProductForm.cs">
@@ -148,10 +148,10 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderForm.resx">
+    <EmbeddedResource Include="Order\OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrderModuleForm.resx">
+    <EmbeddedResource Include="Order\OrderModuleForm.resx">
       <DependentUpon>OrderModuleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product\ProductForm.resx">
@@ -189,6 +189,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="_custom_control\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

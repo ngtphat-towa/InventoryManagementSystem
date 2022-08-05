@@ -25,7 +25,7 @@ namespace InventoryManagementSystem
         private void LoadCategory()
         {
             cbCategory.Items.Clear();
-            cm = new SqlCommand("Select * from dbo.tbCategory WHERE CONCAT(", con);
+            cm = new SqlCommand("Select * from dbo.tbCategory", con);
             con.Open();
             dr = cm.ExecuteReader();
             while (dr.Read())
